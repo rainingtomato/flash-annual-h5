@@ -84,7 +84,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import MerchantNode from './MerchantNode.vue'
-import beijingBubble from '../assets/city-bubbles/beijing@2x.png'
 
 const rootEl   = ref(null)
 const pathWrap = ref(null)
@@ -142,15 +141,15 @@ const makeNode = (id, posClass, overrides = {}) => {
 // ── 26个节点数据,posClass 对应 CSS 定位类 ──
 // 城市标签图片映射
 const cityBubbles = {
-  '北京': 'src/assets/city-bubbles/beijing@2x.png',
-  '上海': 'src/assets/city-bubbles/shagnhai@2x.png',
-  '广州': 'src/assets/city-bubbles/guangdong@2x.png',
-  '深圳': 'src/assets/city-bubbles/guangdong@2x.png', 
-  '南京': 'src/assets/city-bubbles/jiangsu@2x.png',
-  '杭州': 'src/assets/city-bubbles/zhejiang@2x.png',
-  '重庆': 'src/assets/city-bubbles/chongqing2x.png',
-  '昆明': 'src/assets/city-bubbles/yunnan@2x.png',
-  '西安': 'src/assets/city-bubbles/shanxi@2x.png'
+  '北京': '/image/city-bubbles/beijing@2x.png',
+  '上海': '/image/city-bubbles/shagnhai@2x.png',
+  '广州': '/image/city-bubbles/guangdong@2x.png',
+  '深圳': '/image/city-bubbles/guangdong@2x.png',
+  '南京': '/image/city-bubbles/jiangsu@2x.png',
+  '杭州': '/image/city-bubbles/zhejiang@2x.png',
+  '重庆': '/image/city-bubbles/chongqing2x.png',
+  '昆明': '/image/city-bubbles/yunnan@2x.png',
+  '西安': '/image/city-bubbles/shanxi@2x.png'
 }
 
 const nodes = [
@@ -158,7 +157,7 @@ const nodes = [
   makeNode( 1, 'node-1', {
     bubbleCity: cityBubbles['北京'],
     cityAlt: '北京',
-    avatarImg: 'src/assets/avatarImg/logo1@2x.png',
+    avatarImg: '/image/avatarImg/logo1@2x.png',
     nameAlt: '斑马超市',
     dateAlt: '0729',
     highlight: '',
@@ -167,7 +166,7 @@ const nodes = [
   makeNode( 2, 'node-2', {
     bubbleCity: cityBubbles['北京'],
     cityAlt: '北京',
-    avatarImg: 'src/assets/avatarImg/logo2@2x.png', 
+    avatarImg: '/image/avatarImg/logo2@2x.png',
     nameAlt: '小鹿驾到',
     dateAlt: '0806',
     highlight: '',  // 待补充亮点标签图片
@@ -176,7 +175,7 @@ const nodes = [
   makeNode( 3, 'node-3', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo3@2x.png',
+    avatarImg: '/image/avatarImg/logo3@2x.png',
     nameAlt: '飞利浦',
     dateAlt: '0814',
     highlight: '',
@@ -185,7 +184,7 @@ const nodes = [
   makeNode( 4, 'node-4', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo4@2x.png', 
+    avatarImg: '/image/avatarImg/logo4@2x.png',
     nameAlt: '飞科',
     dateAlt: '0815',
     highlight: '',  // 待补充亮点标签图片
@@ -195,7 +194,7 @@ const nodes = [
   makeNode( 5, 'node-r2-1', {
     bubbleCity: cityBubbles['广州'],
     cityAlt: '广州',
-    avatarImg: 'src/assets/avatarImg/logo5@2x.png', 
+    avatarImg: '/image/avatarImg/logo5@2x.png',
     dateAlt: '0818',
     highlight: '',
     highlightAlt: ''
@@ -203,7 +202,7 @@ const nodes = [
   makeNode( 6, 'node-r2-2', {
     bubbleCity: cityBubbles['广州'],
     cityAlt: '广州',
-    avatarImg: 'src/assets/avatarImg/logo6@2x.png', 
+    avatarImg: '/image/avatarImg/logo6@2x.png',
     nameAlt: '名创优品',
     dateAlt: '0819',
     highlight: '',
@@ -212,7 +211,7 @@ const nodes = [
   makeNode( 7, 'node-r2-3', {
     bubbleCity: cityBubbles['北京'],
     cityAlt: '北京',
-    avatarImg: 'src/assets/avatarImg/logo7@2x.png',
+    avatarImg: '/image/avatarImg/logo7@2x.png',
     nameAlt: '小米',
     dateAlt: '0821',
     highlight: '',  // 待补充亮点标签图片
@@ -221,7 +220,7 @@ const nodes = [
   makeNode( 8, 'node-r2-4', {
     bubbleCity: cityBubbles['深圳'],
     cityAlt: '深圳',
-    avatarImg: 'src/assets/avatarImg/logo8@2x.png',  
+    avatarImg: '/image/avatarImg/logo8@2x.png',
     nameAlt: '百果园',
     dateAlt: '0911',
     highlight: '',
@@ -231,7 +230,7 @@ const nodes = [
   makeNode( 9, 'node-r3-1', {
     bubbleCity: cityBubbles['北京'],
     cityAlt: '北京',
-    avatarImg: 'src/assets/avatarImg/logo9@2x.png', 
+    avatarImg: '/image/avatarImg/logo9@2x.png',
     nameAlt: '嗨特购',
     dateAlt: '0916',
     highlight: '',
@@ -240,7 +239,7 @@ const nodes = [
   makeNode(10, 'node-r3-2', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo10@2x.png', 
+    avatarImg: '/image/avatarImg/logo10@2x.png',
     nameAlt: '锅圈',
     dateAlt: '0917',
     highlight: '',
@@ -249,7 +248,7 @@ const nodes = [
   makeNode(11, 'node-r3-3', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo11@2x.png',  
+    avatarImg: '/image/avatarImg/logo11@2x.png',
     nameAlt: '玩具反斗城',
     dateAlt: '0918',
     highlight: '',
@@ -258,7 +257,7 @@ const nodes = [
   makeNode(12, 'node-r3-4', {
     bubbleCity: cityBubbles['北京'],
     cityAlt: '北京',
-    avatarImg: 'src/assets/avatarImg/logo12@2x.png',  
+    avatarImg: '/image/avatarImg/logo12@2x.png',
     nameAlt: '小天才',
     dateAlt: '0923',
     highlight: '',  // 待补充亮点标签图片
@@ -268,7 +267,7 @@ const nodes = [
   makeNode(13, 'node-r4-1', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo13@2x.png',  
+    avatarImg: '/image/avatarImg/logo13@2x.png',
     nameAlt: '好想来',
     dateAlt: '0924',
     highlight: '',
@@ -277,7 +276,7 @@ const nodes = [
   makeNode(14, 'node-r4-2', {
     bubbleCity: cityBubbles['深圳'],
     cityAlt: '深圳',
-    avatarImg: 'src/assets/avatarImg/logo14@2x.png',  
+    avatarImg: '/image/avatarImg/logo14@2x.png',
     nameAlt: '八马茶业',
     dateAlt: '1010',
     highlight: '',
@@ -286,7 +285,7 @@ const nodes = [
   makeNode(15, 'node-r4-3', {
     bubbleCity: cityBubbles['南京'],
     cityAlt: '南京',
-    avatarImg: 'src/assets/avatarImg/logo15@2x.png',  
+    avatarImg: '/image/avatarImg/logo15@2x.png',
     nameAlt: '酒易淘',
     dateAlt: '1015',
     highlight: '',  // 待补充亮点标签图片
@@ -295,7 +294,7 @@ const nodes = [
   makeNode(16, 'node-r4-4', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo16@2x.png',  
+    avatarImg: '/image/avatarImg/logo16@2x.png',
     nameAlt: '罗森',
     dateAlt: '1023',
     highlight: '',  // 待补充亮点标签图片
@@ -305,7 +304,7 @@ const nodes = [
   makeNode(17, 'node-r5-1', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo17@2x.png',  
+    avatarImg: '/image/avatarImg/logo17@2x.png',
     nameAlt: '全家',
     dateAlt: '1023',
     highlight: '',
@@ -314,7 +313,7 @@ const nodes = [
   makeNode(18, 'node-r5-2', {
     bubbleCity: cityBubbles['广州'],
     cityAlt: '广州',
-    avatarImg: 'src/assets/avatarImg/logo18@2x.png', 
+    avatarImg: '/image/avatarImg/logo18@2x.png',
     nameAlt: '鸣鸣很忙',
     dateAlt: '1030',
     highlight: '',
@@ -323,7 +322,7 @@ const nodes = [
   makeNode(19, 'node-r5-3', {
     bubbleCity: cityBubbles['杭州'],
     cityAlt: '杭州',
-    avatarImg: 'src/assets/avatarImg/logo19@2x.png',  
+    avatarImg: '/image/avatarImg/logo19@2x.png',
     nameAlt: '苏泊尔',
     dateAlt: '1107',
     highlight: '',  // 待补充亮点标签图片
@@ -332,7 +331,7 @@ const nodes = [
   makeNode(20, 'node-r5-4', {
     bubbleCity: cityBubbles['南京'],
     cityAlt: '南京',
-    avatarImg: 'src/assets/avatarImg/logo20@2x.png',  
+    avatarImg: '/image/avatarImg/logo20@2x.png',
     nameAlt: '孩子王',
     dateAlt: '1113',
     highlight: '',
@@ -342,7 +341,7 @@ const nodes = [
   makeNode(21, 'node-r6-1', {
     bubbleCity: cityBubbles['重庆'],
     cityAlt: '重庆',
-    avatarImg: 'src/assets/avatarImg/logo21@2x.png',  
+    avatarImg: '/image/avatarImg/logo21@2x.png',
     nameAlt: '菜老包',
     dateAlt: '1120',
     highlight: '',  // 待补充亮点标签图片
@@ -351,7 +350,7 @@ const nodes = [
   makeNode(22, 'node-r6-2', {
     bubbleCity: cityBubbles['重庆'],
     cityAlt: '重庆',
-    avatarImg: 'src/assets/avatarImg/logo22@2x.png', 
+    avatarImg: '/image/avatarImg/logo22@2x.png',
     nameAlt: '玫瑰之约',
     dateAlt: '1120',
     highlight: '',  // 待补充亮点标签图片
@@ -360,7 +359,7 @@ const nodes = [
   makeNode(23, 'node-r6-3', {
     bubbleCity: cityBubbles['上海'],
     cityAlt: '上海',
-    avatarImg: 'src/assets/avatarImg/logo23@2x.png',  
+    avatarImg: '/image/avatarImg/logo23@2x.png',
     nameAlt: '晨光文具',
     dateAlt: '1124',
     highlight: '',
@@ -369,7 +368,7 @@ const nodes = [
   makeNode(24, 'node-r6-4', {
     bubbleCity: cityBubbles['昆明'],
     cityAlt: '昆明',
-    avatarImg: 'src/assets/avatarImg/logo24@2x.png',  
+    avatarImg: '/image/avatarImg/logo24@2x.png',
     nameAlt: 'TT美妆',
     dateAlt: '1210',
     highlight: '',
@@ -379,7 +378,7 @@ const nodes = [
   makeNode(25, 'node-r7-1', {
     bubbleCity: cityBubbles['西安'],
     cityAlt: '西安',
-    avatarImg: 'src/assets/avatarImg/logo25@2x.png', 
+    avatarImg: '/image/avatarImg/logo25@2x.png',
     nameAlt: '千姿鲜花坊',
     dateAlt: '1218',
     highlight: '',
@@ -388,7 +387,7 @@ const nodes = [
   makeNode(26, 'node-r7-2', {
     bubbleCity: cityBubbles['深圳'],
     cityAlt: '深圳',
-    avatarImg: 'src/assets/avatarImg/logo26@2x.png',  
+    avatarImg: '/image/avatarImg/logo26@2x.png',
     nameAlt: '周大生',
     dateAlt: '1224',
     highlight: '',  // 待补充亮点标签图片
