@@ -13,10 +13,10 @@ body {
 
 /* 模块标题 */
 .module-title {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   color: #1A1A1A;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 /* 模块副标题 */
