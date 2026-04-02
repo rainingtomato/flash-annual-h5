@@ -204,7 +204,7 @@ onUnmounted(() => {
 /* 底部摘要卡片（流内布局，与背景图区域有负 margin 上移叠压） */
 .summary-card {
   position: relative;
-  margin: -78px 16px 0;
+  margin: -78px 12px 0;
   background:  linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, #FFFFFF 100%);
   border-radius: 16px;
   border: 2px solid #FFFFFF;

@@ -1,54 +1,36 @@
 <template>
-  <div class="city-bubble">
-    <img class="bubble-bg" :src="bubbleBg" aria-hidden="true" />
-    <img class="bubble-city" :src="bubbleCity" :alt="cityAlt" />
-  </div>
+  <img class="city-bubble" :src="bubbleCity" :alt="cityAlt" />
   <div class="node-card">
     <div class="avatar-wrap">
       <img class="avatar-border" :src="avatarBorder" aria-hidden="true" />
       <img class="avatar-img" :src="avatarImg" :alt="nameAlt" />
     </div>
-    <img class="node-name" :src="nameSrc" :alt="nameAlt" />
+    <div class="node-name">{{ nameAlt }}</div>
     <div class="node-meta">
-      <img class="meta-date" :src="metaDate" :alt="dateAlt" />
-      <img class="meta-div" :src="metaDivider" aria-hidden="true" />
-      <img class="meta-city" :src="metaCity" :alt="cityAlt2" />
+      <span class="meta-date">{{ dateAlt }}</span>
+      <span class="meta-div">|</span>
+      <span class="meta-city">{{ cityAlt2 }}</span>
     </div>
-    <img class="node-highlight" :src="highlight" :alt="highlightAlt" />
+    <img v-if="highlight" class="node-highlight" :src="highlight" :alt="highlightAlt" />
+    <div v-else class="node-highlight-placeholder"></div>
   </div>
 </template>
 
 <style scoped>
 /* 顶部城市气泡 */
 .city-bubble {
-  position: relative;
   width: 31px;
-  height: 18px;
+  height: 19px;
   margin-bottom: 4px;
   flex-shrink: 0;
-}
-
-.bubble-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.bubble-city {
-  position: absolute;
-  width: 9px;
-  height: 10px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
 
 /* 主体卡片 */
 .node-card {
   width: 60px;
   border-radius: 10px;
-  padding: 5px 4px 4px;
+  padding: 0px 4px 4px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,9 +62,15 @@
 
 /* 商家名 */
 .node-name {
-  width: 40px;
-  height: 14px;
-  object-fit: contain;
+  font-size: 10px;
+  font-weight: 500;
+  color: #333333;
+  line-height: 14px;
+  text-align: center;
+  max-width: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   margin-top: 1px;
 }
 
@@ -91,24 +79,25 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  font-size: 8px;
+  color: #666666;
+  line-height: 10px;
 }
 
 .meta-date {
-  width: 22px;
-  height: 10px;
-  object-fit: contain;
+  font-size: 8px;
+  color: #666666;
 }
 
 .meta-div {
-  width: 1px;
-  height: 6px;
-  opacity: 0.1;
+  font-size: 8px;
+  color: #CCCCCC;
+  margin: 0 1px;
 }
 
 .meta-city {
-  width: 18px;
-  height: 10px;
-  object-fit: contain;
+  font-size: 8px;
+  color: #666666;
 }
 
 /* 亮点标签 */
@@ -118,15 +107,21 @@
   object-fit: contain;
   margin-top: 1px;
 }
+
+/* 亮点标签占位符：无标签时保持高度 */
+.node-highlight-placeholder {
+  width: 50px;
+  height: 8px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
 </style>
 
 <script setup>
 defineProps({
-  /** 城市气泡背景 SVG */
-  bubbleBg: { type: String, required: true },
-  /** 城市气泡文字切图 */
+  /** 城市气泡切图 */
   bubbleCity: { type: String, required: true },
-  /** 城市气泡 alt 文本（城市首字） */
+  /** 城市气泡 alt 文本 */
   cityAlt: { type: String, default: '' },
   /** 头像边框 SVG */
   avatarBorder: { type: String, required: true },
@@ -146,8 +141,8 @@ defineProps({
   metaCity: { type: String, required: true },
   /** 城市 alt */
   cityAlt2: { type: String, default: '' },
-  /** 亮点标签切图 */
-  highlight: { type: String, required: true },
+  /** 亮点标签切图（可选，不提供则不显示） */
+  highlight: { type: String, default: '' },
   /** 亮点标签 alt */
   highlightAlt: { type: String, default: '' },
 })
